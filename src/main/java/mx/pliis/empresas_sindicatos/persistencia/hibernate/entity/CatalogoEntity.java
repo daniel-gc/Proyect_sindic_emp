@@ -1,7 +1,6 @@
 package mx.pliis.empresas_sindicatos.persistencia.hibernate.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,96 +10,50 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "catalogo")
-public class CatalogoEntity implements Serializable{
+public class CatalogoEntity implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6769939589476416358L;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 6769939589476416358L;
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_cat")
     private Integer idCat;
-	
-	@Basic(optional = false)
+
+    @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "code")
     private String code;
-	
-	@Basic(optional = false)
+
+    @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
     @Column(name = "nombre")
     private String nombre;
-	
-	@Basic(optional = false)
+
+    @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
     @Column(name = "value")
     private String value;
 
-	/**
-	 * @return the idCat
-	 */
-	public Integer getIdCat() {
-		return idCat;
-	}
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "num_meses_vigencia_cert")
+    private int numMesesVigenciaCert;
 
-	/**
-	 * @param idCat the idCat to set
-	 */
-	public void setIdCat(Integer idCat) {
-		this.idCat = idCat;
-	}
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "precio_certificado")
+    private Float precioCertificado;
 
-	/**
-	 * @return the code
-	 */
-	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * @param code the code to set
-	 */
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	/**
-	 * @return the value
-	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	/**
-	 * @return the nombre
-	 */
-	public String getNombre() {
-		return nombre;
-	}
-
-	/**
-	 * @param nombre the nombre to set
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	
 }

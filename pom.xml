@@ -96,7 +96,13 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-		
+                
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+                
 		<!-- 		Dependencias necesarias a partir de Java 10 para usar JAXB -->
 <!-- 		<dependency> -->
 <!-- 		    <groupId>javax.xml.bind</groupId> -->
